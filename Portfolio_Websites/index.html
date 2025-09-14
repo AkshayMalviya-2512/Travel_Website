@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="#" class="brand">Akshay</a>
+    <div class="navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <section class="main">
+    <div class="content">
+      <h2>Hello, I'm <span>Akshay</span></h2>
+      <div class="animated-text">
+        <h3>Developer</h3>
+        <h3>Designer</h3>
+        <h3>Freelancer</h3>
+      </div>
+      <a href="#projects" class="btn">See My Work</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <div class="content">
+      <div class="col-left">
+        <div class="img-card">
+          <img src="img/me.jpg" alt="Myself">
+        </div>
+      </div>
+      <div class="col-right">
+        <p>Hello! I'm Akshay, a passionate web developer experienced in modern technologies. I create responsive, clean, and functional websites.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <h2>My Skills</h2>
+    <div class="skill-bar">
+      <div class="info">
+        <span>HTML</span>
+        <span>95%</span>
+      </div>
+      <div class="bar html"><span></span></div>
+    </div>
+    <div class="skill-bar">
+      <div class="info">
+        <span>CSS</span>
+        <span>90%</span>
+      </div>
+      <div class="bar css"><span></span></div>
+    </div>
+    <div class="skill-bar">
+      <div class="info">
+        <span>JavaScript</span>
+        <span>80%</span>
+      </div>
+      <div class="bar javascript"><span></span></div>
+    </div>
+    <div class="skill-bar">
+      <div class="info">
+        <span>Python</span>
+        <span>85%</span>
+      </div>
+      <div class="bar python"><span></span></div>
+    </div>
+    <div class="skill-bar">
+      <div class="info">
+        <span>PHP</span>
+        <span>65%</span>
+      </div>
+      <div class="bar php"><span></span></div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="work" id="projects">
+    <h2>Projects</h2>
+    <div class="content">
+      <div class="card">
+        <div class="card-img">
+            <a href="https://github.com/AkshayMalviya-2512/Travel_Management_System" target="_blank">
+                <img src="img/work1.jpg" alt="Project 1 screenshot">
+            </a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+            <a href="https://github.com/AkshayMalviya-2512/Electricity-billing-system" target="_blank">
+                <img src="img/work2.jpg" alt="Project 2 screenshot">
+            </a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+            <a href="https://github.com/AkshayMalviya-2512/AI-POWERED-PAYMENT-GATEWAY" target="_blank">
+                <img src="img/work3.jpg" alt="Project 3 screenshot">
+            </a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+            <a href="https://github.com/AkshayMalviya-2512/E-COMMERCE-WEBISTE" target="_blank">
+                <img src="img/work1.jpg" alt="Project 4 screenshot">
+            </a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+            <a href="https://github.com/AkshayMalviya-2512/Travel_Management_System" target="_blank">
+                <img src="img/work2.jpg" alt="Project 5 screenshot">
+            </a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+            <a href="https://github.com/AkshayMalviya-2512/AI-POWERED-PAYMENT-GATEWAY" target="_blank">
+                <img src="img/work3.jpg" alt="Project 6 screenshot">
+            </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <div class="content">
+      <form class="contact-form">
+        <h3>Send a Message</h3>
+        <div class="input-box">
+          <input type="text" placeholder="Name">
+        </div>
+        <div class="input-box">
+          <input type="email" placeholder="Email">
+        </div>
+        <div class="input-box">
+          <textarea placeholder="Your Message"></textarea>
+        </div>
+        <div class="input-box">
+          <input type="submit" value="Send" class="send-btn">
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span class="footer-title">Akshay Malviya</span>
+    <p>© 2025 All Rights Reserved | <a href="#">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    // Animate skill bars only when scrolled into view
+    const skillBars = document.querySelectorAll('.skills .bar span');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.parentElement.classList.contains('html') ? '95%' :
+                                     entry.target.parentElement.classList.contains('css') ? '90%' :
+                                     entry.target.parentElement.classList.contains('javascript') ? '80%' :
+                                     entry.target.parentElement.classList.contains('python') ? '85%' :
+                                     entry.target.parentElement.classList.contains('php') ? '65%' : '0';
+        }
+      });
+    }, { threshold: 0.3 });
+
+    skillBars.forEach(bar => {
+      observer.observe(bar);
+    });
+  </script>
+</body>
+</html>
